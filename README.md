@@ -157,7 +157,7 @@ If a cumulative probability vector is not provided, returns a quantile function.
 ``` javascript
 var probs = [ 0.025, 0.5, 0.975 ];
 
-var quantiles = dist.quantiles( probs );
+var quantiles = dist.quantile( probs );
 // returns [...]
 ``` 
 
