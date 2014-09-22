@@ -171,7 +171,7 @@ Note: all vector values must exist on the interval `[0, 1]`.
 var createDist = require( 'distributions-exponential' );
 
 // Define the distribution parameters...
-var rate = 0.1,
+var lambda = 0.1,
 	xLow = 0,
 	xHigh = 200;
 
@@ -187,7 +187,7 @@ for ( var i = 0; i < len; i++ ) {
 }
 
 // Create an exponential distribution and configure...
-var dist = createDist().rate( rate );
+var dist = createDist().rate( lambda );
 
 // Evaluate the probability density function over the vector...
 var pdf = dist.pdf( vec );
