@@ -130,6 +130,10 @@ describe( 'distributions-exponential', function tests() {
 			assert.strictEqual( dist.median(), 0.1*Math.log(2) );
 		});
 
+		it( 'should be less than the mean', function test() {
+			assert.ok( dist.median() < dist.mean() );
+		});
+
 	}); // end TESTS median
 
 	describe( 'mode', function tests() {
@@ -250,7 +254,10 @@ describe( 'distributions-exponential', function tests() {
 			}
 		});
 
-		it( 'should evaluate the pdf' );
+		it( 'should evaluate the pdf', function test() {
+			var data = [ 0, 10, 100, 1000 ];
+			assert.isArray( dist.pdf( data ) );
+		});
 
 	}); // end TESTS pdf
 
@@ -310,7 +317,10 @@ describe( 'distributions-exponential', function tests() {
 			}
 		});
 
-		it( 'should evaluate the cdf' );
+		it( 'should evaluate the cdf', function test() {
+			var data = [ 0, 10, 100, 1000 ];
+			assert.isArray( dist.cdf( data ) );
+		});
 
 	}); // end TESTS cdf
 
@@ -382,7 +392,11 @@ describe( 'distributions-exponential', function tests() {
 			}
 		});
 
-		it( 'should evaluate the quantile function' );
+		it( 'should evaluate the quantile function', function test() {
+			var p = [ 0.025, 0.05, 0.159, 0.5, 0.841, 0.95, 0.975 ],
+				res = dist.quantile( p );
+			assert.isArray( res );
+		});
 
 	}); // end TESTS quantile
 

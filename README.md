@@ -22,7 +22,7 @@ To use the module,
 var createDist = require( 'distributions-exponential' );
 ```
 
-To create a distribution,
+To create an exponential distribution,
 
 ``` javascript
 var dist = createDist();
@@ -33,7 +33,7 @@ The distribution is configurable and has the following methods...
 
 #### dist.support()
 
-Returns the distribution support, which is all positive real numbers, including 0.
+Returns the distribution support, which is all positive real numbers and 0.
 
 ``` javascript
 dist.support();
@@ -150,7 +150,7 @@ var cdf = dist.cdf( data );
 ```
 
 
-#### normal.quantile( [arr] )
+#### dist.quantile( [arr] )
 
 If a cumulative probability vector is not provided, returns a quantile function. If a cumulative probability vector is provided, evaluates the quantile function for each vector element.
 

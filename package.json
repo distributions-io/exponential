@@ -29,7 +29,8 @@
     "statistics",
     "stats",
     "pdf",
-    "cdf"
+    "cdf",
+    "exponential"
   ],
   "bugs": {
     "url": "https://github.com/distributions-io/exponential/issues"
