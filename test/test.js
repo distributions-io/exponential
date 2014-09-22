@@ -196,6 +196,10 @@ describe( 'distributions-exponential', function tests() {
 			assert.strictEqual( dist.information(), 0.01 );
 		});
 
+		it( 'should equal the variance', function test() {
+			assert.strictEqual( dist.information(), dist.variance() );
+		});
+
 	}); // end TESTS information
 
 	describe( 'pdf', function tests() {
@@ -257,6 +261,11 @@ describe( 'distributions-exponential', function tests() {
 		it( 'should evaluate the pdf', function test() {
 			var data = [ 0, 10, 100, 1000 ];
 			assert.isArray( dist.pdf( data ) );
+		});
+
+		it( 'should be implemented correctly', function test() {
+			dist.rate( 0.1 );
+			assert.closeTo( dist.pdf([10])[0], 0.1/Math.E, 1e-7 );
 		});
 
 	}); // end TESTS pdf
@@ -393,8 +402,9 @@ describe( 'distributions-exponential', function tests() {
 		});
 
 		it( 'should evaluate the quantile function', function test() {
-			var p = [ 0.025, 0.05, 0.159, 0.5, 0.841, 0.95, 0.975 ],
-				res = dist.quantile( p );
+			var p, res;
+			p = [ 0.025, 0.05, 0.159, 0.5, 0.841, 0.95, 0.975 ];
+			res = dist.quantile( p );
 			assert.isArray( res );
 		});
 
