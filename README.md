@@ -54,7 +54,7 @@ The default rate is 1.
 
 #### dist.mean()
 
-Returns the distribution `mean`, which is equal to the inverse `rate`.
+Returns the distribution `mean`.
 
 ``` javascript
 dist.mean();
@@ -82,7 +82,7 @@ var median = dist.median();
 
 #### dist.mode()
 
-Returns the distribution `mode`, which is 0.
+Returns the distribution `mode`.
 
 ``` javascript
 var mode = dist.mode();
@@ -92,7 +92,7 @@ var mode = dist.mode();
 
 #### dist.skewness()
 
-Returns the distribution `skewness`, which is 2.
+Returns the distribution `skewness`.
 
 ``` javascript
 var skewness = dist.skewness();
@@ -101,7 +101,7 @@ var skewness = dist.skewness();
 
 #### dist.ekurtosis()
 
-Returns the distribution `excess kurtosis`, which is 6.
+Returns the distribution `excess kurtosis`.
 
 ``` javascript
 var excess = dist.ekurtosis();
@@ -111,7 +111,7 @@ var excess = dist.ekurtosis();
 
 #### dist.information()
 
-Returns the [Fisher information](http://en.wikipedia.org/wiki/Fisher_information), which is equal to the variance.
+Returns the [Fisher information](http://en.wikipedia.org/wiki/Fisher_information).
 
 ``` javascript
 var info = dist.information();
