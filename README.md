@@ -33,26 +33,38 @@ The distribution is configurable and has the following methods...
 
 #### dist.support()
 
-Returns the distribution support.
+Returns the distribution support, which is all positive real numbers, including 0.
 
 ``` javascript
 dist.support();
-// returns 
+// returns [ 0, +inf ]
 ```
 
 
-#### dist.mean( [value] )
+#### dist.rate( [value] )
 
-This method is a setter/getter. If no `value` is provided, returns the distribution `mean`. To set the distribution `mean`,
+This method is a setter/getter. If no `value` is provided, returns the `rate`. To set the `rate`,
 
 ``` javascript
-dist.mean( 100 );
+dist.rate( 100 );
+```
+
+The default rate is 1.
+
+
+#### dist.mean()
+
+Returns the distribution `mean`, which is equal to the inverse `rate`.
+
+``` javascript
+dist.mean();
+// returns 1/rate
 ```
 
 
-#### dist.variance( [value] )
+#### dist.variance()
 
-This method is a setter/getter. If no `value` is provided, returns the distribution `variance`. To set the distribution `variance`,
+Returns the distribution `variance`.
 
 ``` javascript
 dist.variance();
@@ -65,46 +77,45 @@ Returns the distribution `median`.
 
 ``` javascript
 var median = dist.median();
-// equals 
 ```
 
 
 #### dist.mode()
 
-Returns the distribution `mode`.
+Returns the distribution `mode`, which is 0.
 
 ``` javascript
 var mode = dist.mode();
-// equals 
+// returns 0
 ```
 
 
 #### dist.skewness()
 
-Returns the distribution `skewness`.
+Returns the distribution `skewness`, which is 2.
 
 ``` javascript
 var skewness = dist.skewness();
-// returns 
+// returns 2
 ```
 
 #### dist.ekurtosis()
 
-Returns the distribution `excess kurtosis`.
+Returns the distribution `excess kurtosis`, which is 6.
 
 ``` javascript
 var excess = dist.ekurtosis();
-// returns 
+// returns 6
 ```
 
 
 #### dist.information()
 
-Returns the [Fisher information](http://en.wikipedia.org/wiki/Fisher_information).
+Returns the [Fisher information](http://en.wikipedia.org/wiki/Fisher_information), which is equal to the variance.
 
 ``` javascript
 var info = dist.information();
-// returns [...]
+// equals dist.variance()
 ```
 
 
@@ -114,7 +125,6 @@ Returns the distribution's [differential entropy](http://en.wikipedia.org/wiki/D
 
 ``` javascript
 var entropy = dist.entropy();
-// 
 ```
 
 #### dist.pdf( [arr] )
@@ -122,7 +132,7 @@ var entropy = dist.entropy();
 If a vector is not provided, returns the probability density function (PDF). If a vector is provided, evaluates the PDF for each vector element.
 
 ``` javascript
-var data = [ -1, -0.5, 0, 0.5, 1 ];
+var data = [ 0, 1, 10, 100, 1000 ];
 
 var pdf = dist.pdf( data );
 // returns [...]
@@ -133,7 +143,7 @@ var pdf = dist.pdf( data );
 If a vector is not provided, returns the cumulative density function (CDF). If a vector is provided, evaluates the CDF for each vector element.
 
 ``` javascript
-var data = [ -1, -0.5, 0, 0.5, 1 ];
+var data = [ 0, 1, 10, 100, 1000 ];
 
 var cdf = dist.cdf( data );
 // returns [...]
