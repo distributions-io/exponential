@@ -1,6 +1,6 @@
 {
   "name": "distributions-exponential",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Exponential distribution.",
   "author": {
     "name": "Athan Reines",
