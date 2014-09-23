@@ -150,14 +150,14 @@ var cdf = dist.cdf( data );
 ```
 
 
-#### dist.quantile( [arr] )
+#### dist.inv( [arr] )
 
-If a cumulative probability vector is not provided, returns a quantile function. If a cumulative probability vector is provided, evaluates the quantile function for each vector element.
+If a cumulative probability vector is not provided, returns the inverse cumulative distribution (quantile) function. If a cumulative probability vector is provided, evaluates the quantile function for each vector element.
 
 ``` javascript
 var probs = [ 0.025, 0.5, 0.975 ];
 
-var quantiles = dist.quantile( probs );
+var quantiles = dist.inv( probs );
 // returns [...]
 ``` 
 
@@ -199,7 +199,7 @@ for ( var j = 0; j < arr.length; j++ ) {
 console.log( arr );
 
 // Evaluate the quantile function for canonical cumulative probability values...
-var quantiles = dist.quantile( [ 0.025, 0.5, 0.975 ] );
+var quantiles = dist.inv( [ 0.025, 0.5, 0.975 ] );
 
 console.log( quantiles );
 ```

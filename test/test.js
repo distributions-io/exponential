@@ -335,12 +335,12 @@ describe( 'distributions-exponential', function tests() {
 
 	describe( 'quantile', function test() {
 
-		it( 'should provide a method to get/evaluate the distribution quantile function', function test() {
-			expect( dist.quantile ).to.be.a( 'function' );
+		it( 'should provide a method to get/evaluate the inverse cumulative distribution (quantile) function', function test() {
+			expect( dist.inv ).to.be.a( 'function' );
 		});
 
 		it( 'should return a function', function test() {
-			expect( dist.quantile() ).to.be.a( 'function' );
+			expect( dist.inv() ).to.be.a( 'function' );
 		});
 
 		it( 'should throw an error if not provided an array', function test() {
@@ -361,7 +361,7 @@ describe( 'distributions-exponential', function tests() {
 
 			function badValue( value ) {
 				return function() {
-					dist.quantile( value );
+					dist.inv( value );
 				};
 			}
 		});
@@ -384,7 +384,7 @@ describe( 'distributions-exponential', function tests() {
 
 			function badValue( value ) {
 				return function() {
-					dist.quantile( [value] );
+					dist.inv( [value] );
 				};
 			}
 		});
@@ -396,7 +396,7 @@ describe( 'distributions-exponential', function tests() {
 			}
 			function badValue( value ) {
 				return function() {
-					dist.quantile( [value] );
+					dist.inv( [value] );
 				};
 			}
 		});
@@ -404,7 +404,7 @@ describe( 'distributions-exponential', function tests() {
 		it( 'should evaluate the quantile function', function test() {
 			var p, res;
 			p = [ 0.025, 0.05, 0.159, 0.5, 0.841, 0.95, 0.975 ];
-			res = dist.quantile( p );
+			res = dist.inv( p );
 			assert.isArray( res );
 		});
 
