@@ -258,6 +258,16 @@ describe( 'distributions-exponential', function tests() {
 			}
 		});
 
+		it( 'should throw an error if array contains values less than 0', function test() {
+			expect( badValue( -1 ) ).to.throw( Error );
+
+			function badValue( value ) {
+				return function() {
+					dist.pdf( [value] );
+				};
+			}
+		});
+
 		it( 'should evaluate the pdf', function test() {
 			var data = [ 0, 10, 100, 1000 ];
 			assert.isArray( dist.pdf( data ) );
@@ -318,6 +328,16 @@ describe( 'distributions-exponential', function tests() {
 			for ( var i = 0; i < values.length; i++ ) {
 				expect( badValue( values[i] ) ).to.throw( TypeError );
 			}
+
+			function badValue( value ) {
+				return function() {
+					dist.cdf( [value] );
+				};
+			}
+		});
+
+		it( 'should throw an error if array contains values less than 0', function test() {
+			expect( badValue( -1 ) ).to.throw( Error );
 
 			function badValue( value ) {
 				return function() {

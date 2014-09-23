@@ -36,7 +36,7 @@ The distribution is configurable and has the following methods...
 Returns the distribution support, which is all positive real numbers and 0.
 
 ``` javascript
-dist.support();
+var support = dist.support();
 // returns [ 0, +inf ]
 ```
 
@@ -57,7 +57,7 @@ The default rate is 1.
 Returns the distribution `mean`.
 
 ``` javascript
-dist.mean();
+var mean = dist.mean();
 // returns 1/rate
 ```
 
@@ -67,7 +67,7 @@ dist.mean();
 Returns the distribution `variance`.
 
 ``` javascript
-dist.variance();
+var variance = dist.variance();
 ```
 
 
@@ -183,7 +183,7 @@ var vec = new Array( 1000 ),
 inc = ( xHigh - xLow ) / len;
 
 for ( var i = 0; i < len; i++ ) {
-	vec[ i ] = inc * i;
+	vec[ i ] = inc*i + xLow;
 }
 
 // Create an exponential distribution and configure...

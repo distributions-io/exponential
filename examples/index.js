@@ -13,7 +13,7 @@ var vec = new Array( 1000 ),
 inc = ( xHigh - xLow ) / len;
 
 for ( var i = 0; i < len; i++ ) {
-	vec[ i ] = inc * i;
+	vec[ i ] = inc*i + xLow;
 }
 
 // Create an exponential distribution and configure...
