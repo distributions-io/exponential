@@ -1,3 +1,4 @@
+'use strict';
 
 // MODULES //
 
@@ -17,7 +18,6 @@ var expect = chai.expect,
 // TESTS //
 
 describe( 'distributions-exponential', function tests() {
-	'use strict';
 
 	// SETUP //
 

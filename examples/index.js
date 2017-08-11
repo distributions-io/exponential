@@ -1,3 +1,5 @@
+'use strict';
+
 var createDist = require( './../lib' );
 
 // Define the distribution parameters...
